@@ -38,7 +38,7 @@ module "k8s" {
   # cluster configuration
   cluster_name_prefix    = "basic-cluster-default-vpc-unit-test"
   cluster_region         = "nyc1"
-  cluster_version_prefix = "1.28."
+  cluster_version_prefix = "1.31."
 
   # vpc configuration
   allow_default_vpc = true

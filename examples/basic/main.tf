@@ -38,7 +38,7 @@ module "k8s" {
   # cluster configuration
   cluster_name_prefix    = "basic-cluster-unit-test"
   cluster_region         = "nyc1"
-  cluster_version_prefix = "1.28."
+  cluster_version_prefix = "1.31."
 
   # vpc configuration
   cluster_ipv4_cidr = "10.250.1.0/24"

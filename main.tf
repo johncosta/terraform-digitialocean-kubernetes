@@ -45,6 +45,8 @@ resource "digitalocean_kubernetes_cluster" "this" {
   region  = var.cluster_region
   version = data.digitalocean_kubernetes_versions.version.latest_version
 
+  destroy_all_associated_resources = true
+
   node_pool {
     name       = local.worker_pool_name
     size       = var.default_node_pool_node_size

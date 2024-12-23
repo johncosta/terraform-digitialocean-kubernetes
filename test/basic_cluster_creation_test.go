@@ -1,11 +1,10 @@
 package test
 
 import (
-	"os"
-	"testing"
-
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+	"os"
+	"testing"
 )
 
 func TestCreateClusterSuccess(t *testing.T) {
@@ -98,10 +97,9 @@ func TestThatCreateClusterFails(t *testing.T) {
 		tc := tc // rebind to scope see: https://www.gopherguides.com/articles/table-driven-testing-in-parallel
 		t.Run(tc.testName, func(t *testing.T) {
 			t.Parallel()
-			terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
+			_, err := terraform.InitAndValidateE(t, &terraform.Options{
 				TerraformDir: tc.terraformDir,
 			})
-			_, err := terraform.InitAndValidateE(t, terraformOptions)
 			assert.Error(t, err)
 			if err == nil {
 				t.Fatalf("Should fail with `%s`, but did not fail.", tc.expectedError)

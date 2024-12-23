@@ -37,7 +37,7 @@ module "k8s" {
   # cluster configuration
   cluster_name_prefix    = "no-cluster-region-error"
   cluster_region         = ""
-  cluster_version_prefix = "1.28."
+  cluster_version_prefix = "1.31."
 
   # default node  pool configuration
   default_node_pool_node_count = 1
